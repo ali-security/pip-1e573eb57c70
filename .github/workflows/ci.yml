@@ -2,15 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
     tags:
       # Tags for all potential release numbers till 2030.
-      - "2[0-9].[0-3]" # 20.0 -> 29.3
-      - "2[0-9].[0-3].[0-9]+" # 20.0.0 -> 29.3.[0-9]+
+      - 2[0-9].[0-3]   # 20.0 -> 29.3
+      - 2[0-9].[0-3].[0-9]+   # 20.0.0 -> 29.3.[0-9]+
   pull_request:
-  schedule:
-    - cron: 0 0 * * MON # Run every Monday at 00:00 UTC
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: true
@@ -18,18 +15,18 @@ concurrency:
 jobs:
   docs:
     name: docs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: MatteoH2O1999/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: 3.x
       - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
       - run: nox -s docs
 
   determine-changes:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       tests: ${{ steps.filter.outputs.tests }}
       vendoring: ${{ steps.filter.outputs.vendoring }}
@@ -54,13 +51,13 @@ jobs:
 
   packaging:
     name: packaging
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: MatteoH2O1999/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: 3.x
       - name: Set up git credentials
         run: |
           git config --global user.email "pypa-dev@googlegroups.com"
@@ -73,7 +70,7 @@ jobs:
 
   vendoring:
     name: vendoring
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     needs: [determine-changes]
     if: >-
@@ -82,9 +79,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: MatteoH2O1999/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: 3.x
 
       - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
       - run: nox -s vendoring
@@ -104,16 +101,16 @@ jobs:
       matrix:
         os: [Ubuntu, MacOS]
         python:
-          - "3.7"
-          - "3.8"
-          - "3.9"
-          - "3.10"
-          - "3.11"
-          - "3.12"
+          - '3.7'
+          - '3.8'
+          - '3.9'
+          - '3.10'
+          - '3.11'
+          - '3.12'
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
           allow-prereleases: true
@@ -155,17 +152,17 @@ jobs:
       matrix:
         os: [Windows]
         python:
-          - "3.7"
+          - '3.7'
           # Commented out, since Windows tests are expensively slow.
           # - "3.8"
           # - "3.9"
           # - "3.10"
-          - "3.11"
+          - '3.11'
         group: [1, 2]
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
 
@@ -175,7 +172,7 @@ jobs:
       # and causes tests to fail with "path too long" errors.
       - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
         env:
-          TEMP: "C:\\Temp"
+          TEMP: C:\Temp
 
       # Main check
       - name: Run unit tests
@@ -185,7 +182,7 @@ jobs:
           -m unit
           --verbose --numprocesses auto --showlocals
         env:
-          TEMP: "C:\\Temp"
+          TEMP: C:\Temp
 
       - name: Run integration tests (group 1)
         if: matrix.group == 1
@@ -194,7 +191,7 @@ jobs:
           -m integration -k "not test_install"
           --verbose --numprocesses auto --showlocals
         env:
-          TEMP: "C:\\Temp"
+          TEMP: C:\Temp
 
       - name: Run integration tests (group 2)
         if: matrix.group == 2
@@ -203,11 +200,11 @@ jobs:
           -m integration -k "test_install"
           --verbose --numprocesses auto --showlocals
         env:
-          TEMP: "C:\\Temp"
+          TEMP: C:\Temp
 
   tests-zipapp:
     name: tests / zipapp
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     needs: [packaging, determine-changes]
     if: >-
@@ -216,9 +213,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: MatteoH2O1999/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.10'
 
       - name: Install Ubuntu dependencies
         run: sudo apt-get install bzr
@@ -246,7 +243,7 @@ jobs:
       - tests-zipapp
       - vendoring
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Decide whether the needed jobs succeeded or failed
