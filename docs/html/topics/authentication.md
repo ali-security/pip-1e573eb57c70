@@ -105,9 +105,9 @@ its Python interface.
 
 ```bash
 # install keyring from PyPI
-$ pip install keyring --index-url https://pypi.org/simple
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' keyring --index-url https://pypi.org/simple
 $ echo "your-password" | keyring set pypi.company.com your-username
-$ pip install your-package --keyring-provider import --index-url https://pypi.company.com/
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' your-package --keyring-provider import --index-url https://pypi.company.com/
 ```
 
 ### Using keyring as a command line application
@@ -132,7 +132,7 @@ $ pipx inject keyring keyrings.google-artifactregistry-auth --index-url https://
 $ gcloud auth login
 
 # Note that a username is required in the index URL.
-$ pip install your-package --keyring-provider subprocess --index-url https://username@pypi.example.com/
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' your-package --keyring-provider subprocess --index-url https://username@pypi.example.com/
 ```
 
 ### Here be dragons

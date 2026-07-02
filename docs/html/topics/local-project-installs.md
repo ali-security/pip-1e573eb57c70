@@ -12,7 +12,7 @@ With pip, depending on your usecase, there are two ways to do this:
 You can install local projects by specifying the project path to pip:
 
 ```{pip-cli}
-$ pip install path/to/SomeProject
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' path/to/SomeProject
 ```
 
 This will install the project into the Python that pip is associated with, in a manner similar to how it would actually be installed.
@@ -26,7 +26,7 @@ This is what should be used in CI system and for deployments, since it most clos
 You can install local projects in "editable" mode:
 
 ```{pip-cli}
-$ pip install -e path/to/SomeProject
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -e path/to/SomeProject
 ```
 
 Editable installs allow you to install your project without copying any files. Instead, the files in the development directory are added to Python's import path. This approach is well suited for development and is also known as a "development installation".

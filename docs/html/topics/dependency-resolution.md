@@ -3,15 +3,15 @@
 pip is capable of determining and installing the dependencies of packages. The
 process of determining which version of a dependency to install is known as
 dependency resolution. This behaviour can be disabled by passing
-{any}`--no-deps` to {any}`pip install`.
+{any}`--no-deps` to {any}`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`.
 
 ## How it works
 
-When a user does a `pip install` (e.g. `pip install tea`), pip needs to work
+When a user does a `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` (e.g. `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' tea`), pip needs to work
 out the package's dependencies (e.g. `spoon`, `hot-water`, `tea-leaves` etc.)
 and what the versions of each of those dependencies it should install.
 
-At the start of a `pip install` run, pip does not have all the dependency
+At the start of a `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` run, pip does not have all the dependency
 information of the requested packages. It needs to work out the dependencies
 of the requested packages, the dependencies of those dependencies, and so on.
 Over the course of the dependency resolution process, pip will need to download
@@ -36,7 +36,7 @@ choices made during is not unexpected behaviour or a bug. It is part of how
 dependency resolution for Python packages works.
 
 ````{admonition} Example
-The user requests `pip install tea`. The package `tea` declares a dependency on
+The user requests `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' tea`. The package `tea` declares a dependency on
 `hot-water`, `spoon`, `cup`, amongst others.
 
 pip starts by picking the most recent version of `tea` and get the list of
@@ -52,7 +52,7 @@ packages.
 This can look like:
 
 ```console
-$ pip install tea
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' tea
 Collecting tea
   Downloading tea-1.9.8-py2.py3-none-any.whl (346 kB)
      |████████████████████████████████| 346 kB 10.4 MB/s
@@ -134,7 +134,7 @@ It is usually a good idea to add constraints the package(s) that pip is backtrac
 You could try something like:
 
 ```{pip-cli}
-$ pip install tea "cup >= 3.13"
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' tea "cup >= 3.13"
 ```
 
 This will reduce the number of versions of `cup` it tries, and
@@ -175,7 +175,7 @@ When you get a `ResolutionImpossible` error, you might see something
 like this:
 
 ```{pip-cli}
-$ pip install "pytest < 4.6" pytest-cov==2.12.1
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' "pytest < 4.6" pytest-cov==2.12.1
 [regular pip output]
 ERROR: Cannot install pytest-cov==2.12.1 and pytest<4.6 because these package versions have conflicting dependencies.
 
@@ -243,10 +243,10 @@ To find a version of both `package_coffee` and `package_tea` that depend on
 the same version of `package_water`, you might consider:
 
 - Loosening the range of packages that you are prepared to install
-  (e.g. `pip install "package_coffee>0.44.*" "package_tea>4.0.0"`)
+  (e.g. `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' "package_coffee>0.44.*" "package_tea>4.0.0"`)
 - Asking pip to install _any_ version of `package_coffee` and `package_tea`
   by removing the version specifiers altogether (e.g.
-  `pip install package_coffee package_tea`)
+  `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' package_coffee package_tea`)
 
 In the second case, pip will automatically find a version of both
 `package_coffee` and `package_tea` that depend on the same version of
@@ -259,7 +259,7 @@ If you want to prioritize one package over another, you can add version
 specifiers to _only_ the more important package:
 
 ```{pip-cli}
-$ pip install package_coffee==0.44.1b0 package_tea
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' package_coffee==0.44.1b0 package_tea
 ```
 
 This will result in:

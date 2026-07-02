@@ -59,7 +59,7 @@ installation.
 ### Editable Installation
 
 For installing packages in "editable" mode
-({ref}`pip install --editable <install_--editable>`), pip will invoke
+({ref}`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --editable <install_--editable>`), pip will invoke
 `setup.py develop`, which will use setuptools' mechanisms to perform an
 editable/development installation.
 
@@ -71,7 +71,7 @@ to `distutils`-based projects.
 
 ## Customising the build
 
-The `--global-option` and `--build-option` arguments to the `pip install`
+The `--global-option` and `--build-option` arguments to the `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`
 and `pip wheel` inject additional arguments into the `setup.py` command
 (`--build-option` is only available in `pip wheel`).
 

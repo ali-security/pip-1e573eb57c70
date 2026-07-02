@@ -158,12 +158,12 @@ some_other_file
 Then, to install from this repository, the syntax would be:
 
 ```{pip-cli}
-$ pip install "pkg @ vcs+protocol://repo_url/#subdirectory=pkg_dir"
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' "pkg @ vcs+protocol://repo_url/#subdirectory=pkg_dir"
 ```
 
 or:
 
 ```{pip-cli}
-$ pip install -e "vcs+protocol://repo_url/#egg=pkg&subdirectory=pkg_dir"
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -e "vcs+protocol://repo_url/#egg=pkg&subdirectory=pkg_dir"
 ```
 ````

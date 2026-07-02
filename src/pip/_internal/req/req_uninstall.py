@@ -77,7 +77,7 @@ def uninstallation_paths(dist: BaseDistribution) -> Generator[str, None, None]:
             dep = f"{dist.raw_name}=={dist.version}"
             msg += (
                 " You might be able to recover from this via: "
-                f"'pip install --force-reinstall --no-deps {dep}'."
+                f"'pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --force-reinstall --no-deps {dep}'."
             )
         else:
             msg += f" Hint: The package was installed by {installer}."

@@ -177,7 +177,7 @@ def test_latest_prerelease_install_message(
         print_results(hits)
 
     message = caplog.records[-1].getMessage()
-    assert 'pre-release; install with "pip install --pre"' in message
+    assert 'pre-release; install with "pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --pre"' in message
     assert get_dist.call_args_list == [mock.call("ni")]
 
 

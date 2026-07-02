@@ -1,5 +1,5 @@
 """
-tests specific to "pip install --user"
+tests specific to "pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user"
 """
 import os
 import textwrap

@@ -79,7 +79,7 @@ Installing from the bundle, on a modern Unix system:
 ```
 $ tempdir=$(mktemp -d /tmp/wheelhouse-XXXXX)
 $ (cd $tempdir; tar -xvf /path/to/bundled.tar.bz2)
-$ python -m pip install --force-reinstall --no-index --no-deps $tempdir/*
+$ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --force-reinstall --no-index --no-deps $tempdir/*
 ```
 ````
 

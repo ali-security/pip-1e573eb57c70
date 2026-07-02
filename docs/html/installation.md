@@ -10,7 +10,7 @@ Usually, pip is automatically installed if you are:
 
 ## Supported Methods
 
-If your Python environment does not have pip installed, there are 2 mechanisms
+If your Python environment does not have pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'ed, there are 2 mechanisms
 to install pip supported directly by pip's maintainers:
 
 - [`ensurepip`](#ensurepip)
@@ -84,7 +84,7 @@ pip to change its behaviour. This has been a frequent source of user confusion,
 since it causes a mismatch between documented behaviour in this documentation
 and how pip works after those modifications.
 
-If you face issues when using Python and pip installed using these mechanisms,
+If you face issues when using Python and pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'ed using these mechanisms,
 it is recommended to request for support from the relevant provider (eg: Linux
 distro community, cloud provider support channels, etc).
 
@@ -93,7 +93,7 @@ distro community, cloud provider support channels, etc).
 Upgrade your `pip` by running:
 
 ```{pip-cli}
-$ pip install --upgrade pip
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
 ```
 
 (compatibility-requirements)=

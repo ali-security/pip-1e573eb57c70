@@ -59,10 +59,10 @@ def _should_build(
         return False
 
     if need_wheel:
-        # i.e. pip wheel, not pip install
+        # i.e. pip wheel, not pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'
         return True
 
-    # From this point, this concerns the pip install command only
+    # From this point, this concerns the pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' command only
     # (need_wheel=False).
 
     if not req.source_dir:

@@ -3,7 +3,7 @@
 # Requirements File Format
 
 Requirements files serve as a list of items to be installed by pip, when
-using {ref}`pip install`. Files that use this format are often called
+using {ref}`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`. Files that use this format are often called
 "pip requirements.txt files", since `requirements.txt` is usually what
 these files are named (although, that is not a requirement).
 
@@ -43,7 +43,7 @@ http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev1820+49a88
 ## Structure
 
 Each line of the requirements file indicates something to be installed,
-or arguments to {ref}`pip install`. The following forms are supported:
+or arguments to {ref}`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`. The following forms are supported:
 
 - `[[--option]...]`
 - `<requirement specifier>`
@@ -52,7 +52,7 @@ or arguments to {ref}`pip install`. The following forms are supported:
 - `[-e] <vcs project url>`
 
 For details on requirement specifiers, see {ref}`Requirement Specifiers`. For
-examples of all these forms, see {ref}`pip install Examples`.
+examples of all these forms, see {ref}`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' Examples`.
 
 ### Encoding
 
@@ -75,12 +75,12 @@ Comments are stripped _after_ line continuations are processed.
 
 ## Supported options
 
-Requirements files only supports certain pip install options, which are listed
+Requirements files only supports certain pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' options, which are listed
 below.
 
 ### Global options
 
-The following options have an effect on the _entire_ `pip install` run, and
+The following options have an effect on the _entire_ `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` run, and
 must be specified on their individual lines.
 
 ```{eval-rst}

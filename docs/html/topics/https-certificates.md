@@ -31,7 +31,7 @@ support corporate proxy certificates without additional configuration.
 In order to use system trust stores, you need to use Python 3.10 or newer.
 
   ```{pip-cli}
-  $ python -m pip install SomePackage --use-feature=truststore
+  $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage --use-feature=truststore
   [...]
   Successfully installed SomePackage
   ```
@@ -44,7 +44,7 @@ situation will manifest with an `SSLCertVerificationError` with the message
 "certificate verify failed: unable to get local issuer certificate":
 
 ```{pip-cli}
-$ pip install -U SomePackage
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -U SomePackage
 [...]
    SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (\_ssl.c:997)'))) - skipping
 ```

@@ -28,7 +28,7 @@ within a Python environment that doesn't have it.
 ### Install a package
 
 ```{pip-cli}
-$ pip install sampleproject
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' sampleproject
 [...]
 Successfully installed sampleproject
 ```
@@ -42,7 +42,7 @@ upload packages.
 ### Install a package from GitHub
 
 ```{pip-cli}
-$ pip install git+https://github.com/pypa/sampleproject.git@main
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' git+https://github.com/pypa/sampleproject.git@main
 [...]
 Successfully installed sampleproject
 ```
@@ -57,10 +57,10 @@ pip can install directly from distribution files as well. They come in 2 forms:
 - {term}`wheel distribution <Wheel>` (usually shortened to "wheel")
 
 ```{pip-cli}
-$ pip install sampleproject-1.0.tar.gz
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' sampleproject-1.0.tar.gz
 [...]
 Successfully installed sampleproject
-$ pip install sampleproject-1.0-py3-none-any.whl
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' sampleproject-1.0-py3-none-any.whl
 [...]
 Successfully installed sampleproject
 ```
@@ -72,7 +72,7 @@ list of packages that need to be installed for the project to run. To install
 the packages listed in that file, you can run:
 
 ```{pip-cli}
-$ pip install -r requirements.txt
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -r requirements.txt
 [...]
 Successfully installed sampleproject
 ```
@@ -80,7 +80,7 @@ Successfully installed sampleproject
 ### Upgrade a package
 
 ```{pip-cli}
-$ pip install --upgrade sampleproject
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade sampleproject
    [...]
 Successfully installed sampleproject
 ```

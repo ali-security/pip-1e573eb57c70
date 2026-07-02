@@ -57,14 +57,14 @@ Examples
       .. code-block:: shell
 
          python -m pip wheel --wheel-dir=/tmp/wheelhouse SomePackage
-         python -m pip install --no-index --find-links=/tmp/wheelhouse SomePackage
+         python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-index --find-links=/tmp/wheelhouse SomePackage
 
    .. tab:: Windows
 
       .. code-block:: shell
 
          py -m pip wheel --wheel-dir=/tmp/wheelhouse SomePackage
-         py -m pip install --no-index --find-links=/tmp/wheelhouse SomePackage
+         py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-index --find-links=/tmp/wheelhouse SomePackage
 
 #. Build a wheel for a package from source
 

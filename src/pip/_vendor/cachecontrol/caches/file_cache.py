@@ -79,7 +79,7 @@ class _FileCacheMixin:
                 """
             NOTE: In order to use the FileCache you must have
             filelock installed. You can install it via pip:
-              pip install filelock
+              pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' filelock
             """
             )
             raise ImportError(notice)

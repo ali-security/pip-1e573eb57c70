@@ -26,10 +26,10 @@ Description
 Overview
 --------
 
-``pip download`` does the same resolution and downloading as ``pip install``,
+``pip download`` does the same resolution and downloading as ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``,
 but instead of installing the dependencies, it collects the downloaded
 distributions into the directory provided (defaulting to the current
-directory). This directory can later be passed as the value to ``pip install
+directory). This directory can later be passed as the value to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'
 --find-links`` to facilitate offline or locked down package installation.
 
 ``pip download`` with the ``--platform``, ``--python-version``,

@@ -49,7 +49,7 @@ is added to the cache and used in subsequent installs for the same package
 version.
 
 Wheels built from source distributions provided to pip as a direct path (such
-as `pip install .`) are not cached across runs, though they may be reused within
+as `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' .`) are not cached across runs, though they may be reused within
 the same `pip` execution.
 
 ```{versionchanged} 20.0
@@ -115,7 +115,7 @@ matching cached wheel. This usually means doing something like:
 
 ```{pip-cli}
 $ pip download sampleproject==1.0.0 --no-binary :all:
-$ pip install sampleproject-1.0.0.tar.gz
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' sampleproject-1.0.0.tar.gz
 ```
 
 It is also a good idea to remove the offending cached wheel using the

@@ -330,7 +330,7 @@ their pip packaging. Please file a bug with Debian, with
 You can link to this issue in your bug report.
 
 In the meantime, you may be able to work-around your issue by upgrading
-pip inside your virtualenv: `python -m pip install -U pip`
+pip inside your virtualenv: `python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -U pip`
 ```
 
 Ubuntu:
@@ -342,5 +342,5 @@ their pip packaging. Please file a bug with Ubuntu, with
 You can link to this issue in your bug report.
 
 In the meantime, you may be able to work-around your issue by upgrading
-pip inside your virtualenv: `python -m pip install -U pip`
+pip inside your virtualenv: `python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -U pip`
 ```

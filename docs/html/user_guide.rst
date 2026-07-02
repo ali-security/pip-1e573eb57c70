@@ -52,19 +52,19 @@ Specifiers`
 
    .. code-block:: shell
 
-      python -m pip install SomePackage            # latest version
-      python -m pip install SomePackage==1.0.4     # specific version
-      python -m pip install 'SomePackage>=1.0.4'     # minimum version
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage            # latest version
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage==1.0.4     # specific version
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' 'SomePackage>=1.0.4'     # minimum version
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install SomePackage            # latest version
-      py -m pip install SomePackage==1.0.4     # specific version
-      py -m pip install 'SomePackage>=1.0.4'   # minimum version
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage            # latest version
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage==1.0.4     # specific version
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' 'SomePackage>=1.0.4'   # minimum version
 
-For more information and examples, see the :ref:`pip install` reference.
+For more information and examples, see the :ref:`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` reference.
 
 .. _PyPI: https://pypi.org/
 
@@ -107,23 +107,23 @@ Requirements Files
 ==================
 
 "Requirements files" are files containing a list of items to be
-installed using :ref:`pip install` like so:
+installed using :ref:`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` like so:
 
 .. tab:: Unix/macOS
 
    .. code-block:: shell
 
-      python -m pip install -r requirements.txt
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -r requirements.txt
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install -r requirements.txt
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -r requirements.txt
 
 Details on the format of the files are here: :ref:`requirements-file-format`.
 
-Logically, a Requirements file is just a list of :ref:`pip install` arguments
+Logically, a Requirements file is just a list of :ref:`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` arguments
 placed in a file. Note that you should not rely on the items in the file being
 installed by pip in any particular order.
 
@@ -143,14 +143,14 @@ In practice, there are 4 common uses of Requirements files:
       .. code-block:: shell
 
          python -m pip freeze > requirements.txt
-         python -m pip install -r requirements.txt
+         python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -r requirements.txt
 
    .. tab:: Windows
 
       .. code-block:: shell
 
          py -m pip freeze > requirements.txt
-         py -m pip install -r requirements.txt
+         py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -r requirements.txt
 
 2. Requirements files are used to force pip to properly resolve dependencies.
    pip 20.2 and earlier `doesn't have true dependency resolution
@@ -223,13 +223,13 @@ Use a constraints file like so:
 
    .. code-block:: shell
 
-      python -m pip install -c constraints.txt
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -c constraints.txt
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install -c constraints.txt
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -c constraints.txt
 
 Constraints files are used for exactly the same reason as requirements files
 when you don't know exactly what things you want to install. For instance, say
@@ -267,7 +267,7 @@ to building and installing from source archives. For more information, see the
 :ref:`specification <pypug:binary-distribution-format>`.
 
 pip prefers Wheels where they are available. To disable this, use the
-:ref:`--no-binary <install_--no-binary>` flag for :ref:`pip install`.
+:ref:`--no-binary <install_--no-binary>` flag for :ref:`pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`.
 
 If no satisfactory wheels are found, pip will default to finding source
 archives.
@@ -279,13 +279,13 @@ To install directly from a wheel archive:
 
    .. code-block:: shell
 
-      python -m pip install SomePackage-1.0-py2.py3-none-any.whl
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage-1.0-py2.py3-none-any.whl
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install SomePackage-1.0-py2.py3-none-any.whl
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage-1.0-py2.py3-none-any.whl
 
 To include optional dependencies provided in the ``provides_extras``
 metadata in the wheel, you must add quotes around the install target
@@ -295,13 +295,13 @@ name:
 
    .. code-block:: shell
 
-      python -m pip install './somepackage-1.0-py2.py3-none-any.whl[my-extras]'
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' './somepackage-1.0-py2.py3-none-any.whl[my-extras]'
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install './somepackage-1.0-py2.py3-none-any.whl[my-extras]'
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' './somepackage-1.0-py2.py3-none-any.whl[my-extras]'
 
 .. note::
 
@@ -323,14 +323,14 @@ directory:
 
    .. code-block:: shell
 
-      python -m pip install wheel
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' wheel
       python -m pip wheel --wheel-dir=/local/wheels -r requirements.txt
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install wheel
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' wheel
       py -m pip wheel --wheel-dir=/local/wheels -r requirements.txt
 
 And *then* to install those requirements just using your local directory of
@@ -340,13 +340,13 @@ wheels (and not from PyPI):
 
    .. code-block:: shell
 
-      python -m pip install --no-index --find-links=/local/wheels -r requirements.txt
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-index --find-links=/local/wheels -r requirements.txt
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install --no-index --find-links=/local/wheels -r requirements.txt
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-index --find-links=/local/wheels -r requirements.txt
 
 
 Uninstalling Packages
@@ -565,19 +565,19 @@ Then, to install from local only, you'll be using :ref:`--find-links
 
    .. code-block:: shell
 
-      python -m pip install --no-index --find-links=DIR -r requirements.txt
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-index --find-links=DIR -r requirements.txt
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install --no-index --find-links=DIR -r requirements.txt
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-index --find-links=DIR -r requirements.txt
 
 
 "Only if needed" Recursive Upgrade
 ==================================
 
-``pip install --upgrade`` now has a ``--upgrade-strategy`` option which
+``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade`` now has a ``--upgrade-strategy`` option which
 controls how pip handles upgrading of dependencies. There are 2 upgrade
 strategies supported:
 
@@ -597,11 +597,11 @@ requirements).
 As an example, say ``SomePackage`` has a dependency, ``SomeDependency``, and
 both of them are already installed but are not the latest available versions:
 
-- ``pip install SomePackage``: will not upgrade the existing ``SomePackage`` or
+- ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage``: will not upgrade the existing ``SomePackage`` or
   ``SomeDependency``.
-- ``pip install --upgrade SomePackage``: will upgrade ``SomePackage``, but not
+- ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade SomePackage``: will upgrade ``SomePackage``, but not
   ``SomeDependency`` (unless a minimum requirement is not met).
-- ``pip install --upgrade SomePackage --upgrade-strategy=eager``: upgrades both
+- ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade SomePackage --upgrade-strategy=eager``: upgrades both
   ``SomePackage`` and ``SomeDependency``.
 
 As an historic note, an earlier "fix" for getting the ``only-if-needed``
@@ -611,15 +611,15 @@ behaviour was:
 
    .. code-block:: shell
 
-      python -m pip install --upgrade --no-deps SomePackage
-      python -m pip install SomePackage
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade --no-deps SomePackage
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage
 
 .. tab:: Windows
 
    .. code-block:: shell
 
-      py -m pip install --upgrade --no-deps SomePackage
-      py -m pip install SomePackage
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade --no-deps SomePackage
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' SomePackage
 
 
 A proposal for an ``upgrade-all`` command is being considered as a safer
@@ -636,7 +636,7 @@ location that is specific to a user.  The default location for each OS is
 explained in the python documentation for the `site.USER_BASE
 <https://docs.python.org/3/library/site.html#site.USER_BASE>`_ variable.
 This mode of installation can be turned on by specifying the :ref:`--user
-<install_--user>` option to ``pip install``.
+<install_--user>` option to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``.
 
 Moreover, the "user scheme" can be customized by setting the
 ``PYTHONUSERBASE`` environment variable, which updates the value of
@@ -650,16 +650,16 @@ To install "SomePackage" into an environment with ``site.USER_BASE`` customized 
    .. code-block:: shell
 
       export PYTHONUSERBASE=/myappenv
-      python -m pip install --user SomePackage
+      python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
 
 .. tab:: Windows
 
    .. code-block:: shell
 
       set PYTHONUSERBASE=c:/myappenv
-      py -m pip install --user SomePackage
+      py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
 
-``pip install --user`` follows four rules:
+``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user`` follows four rules:
 
 #. When globally installed packages are on the python path, and they *conflict*
    with the installation requirements, they are ignored, and *not*
@@ -685,14 +685,14 @@ From within a ``--no-site-packages`` virtualenv (i.e. the default kind):
 
    .. code-block:: console
 
-      $ python -m pip install --user SomePackage
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
 
 .. tab:: Windows
 
    .. code-block:: console
 
-      C:\> py -m pip install --user SomePackage
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
 
 
@@ -703,14 +703,14 @@ is already installed in the virtualenv:
 
    .. code-block:: console
 
-      $ python -m pip install --user SomePackage==0.4
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage==0.4
       Will not install to the user site because it will lack sys.path precedence
 
 .. tab:: Windows
 
    .. code-block:: console
 
-      C:\> py -m pip install --user SomePackage==0.4
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage==0.4
       Will not install to the user site because it will lack sys.path precedence
 
 From within a real python, where ``SomePackage`` is *not* installed globally:
@@ -719,7 +719,7 @@ From within a real python, where ``SomePackage`` is *not* installed globally:
 
    .. code-block:: console
 
-      $ python -m pip install --user SomePackage
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       [...]
       Successfully installed SomePackage
 
@@ -727,7 +727,7 @@ From within a real python, where ``SomePackage`` is *not* installed globally:
 
    .. code-block:: console
 
-      C:\> py -m pip install --user SomePackage
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       [...]
       Successfully installed SomePackage
 
@@ -738,10 +738,10 @@ is *not* the latest version:
 
    .. code-block:: console
 
-      $ python -m pip install --user SomePackage
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       [...]
       Requirement already satisfied (use --upgrade to upgrade)
-      $ python -m pip install --user --upgrade SomePackage
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user --upgrade SomePackage
       [...]
       Successfully installed SomePackage
 
@@ -749,10 +749,10 @@ is *not* the latest version:
 
    .. code-block:: console
 
-      C:\> py -m pip install --user SomePackage
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       [...]
       Requirement already satisfied (use --upgrade to upgrade)
-      C:\> py -m pip install --user --upgrade SomePackage
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user --upgrade SomePackage
       [...]
       Successfully installed SomePackage
 
@@ -763,14 +763,14 @@ is the latest version:
 
    .. code-block:: console
 
-      $ python -m pip install --user SomePackage
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       [...]
       Requirement already satisfied (use --upgrade to upgrade)
-      $ python -m pip install --user --upgrade SomePackage
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user --upgrade SomePackage
       [...]
       Requirement already up-to-date: SomePackage
       # force the install
-      $ python -m pip install --user --ignore-installed SomePackage
+      $ python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user --ignore-installed SomePackage
       [...]
       Successfully installed SomePackage
 
@@ -778,14 +778,14 @@ is the latest version:
 
    .. code-block:: console
 
-      C:\> py -m pip install --user SomePackage
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user SomePackage
       [...]
       Requirement already satisfied (use --upgrade to upgrade)
-      C:\> py -m pip install --user --upgrade SomePackage
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user --upgrade SomePackage
       [...]
       Requirement already up-to-date: SomePackage
       # force the install
-      C:\> py -m pip install --user --ignore-installed SomePackage
+      C:\> py -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --user --ignore-installed SomePackage
       [...]
       Successfully installed SomePackage
 
@@ -910,7 +910,7 @@ The most significant changes to the resolver are:
   combination of packages that is mutually inconsistent*. In older
   versions of pip, it is possible for pip to install a package which
   does not satisfy the declared requirements of another installed
-  package. For example, in pip 20.0, ``pip install "six<1.12"
+  package. For example, in pip 20.0, ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' "six<1.12"
   "virtualenv==20.0.2"`` does the wrong thing, “successfully” installing
   ``six==1.11``, even though ``virtualenv==20.0.2`` requires
   ``six>=1.12.0,<2`` (`defined here
@@ -927,11 +927,11 @@ incompatible or inconsistent requirements combinations, now's a good
 time to fix the underlying problem in the packages, because pip will
 be stricter from here on out.
 
-This also means that, when you run a ``pip install`` command, pip only
+This also means that, when you run a ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` command, pip only
 considers the packages you are installing in that command, and **may
 break already-installed packages**. It will not guarantee that your
-environment will be consistent all the time. If you ``pip install x``
-and then ``pip install y``, it's possible that the version of ``y``
+environment will be consistent all the time. If you ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' x``
+and then ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' y``, it's possible that the version of ``y``
 you get will be different than it would be if you had run ``pip
 install x y`` in a single command. We are considering changing this
 behavior (per :issue:`7744`) and would like your thoughts on what
@@ -972,7 +972,7 @@ January 2021, pip dropped support for Python 2 altogether.
 How to upgrade and migrate
 --------------------------
 
-1. **Install pip 20.3** with ``python -m pip install --upgrade pip``.
+1. **Install pip 20.3** with ``python -m pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --upgrade pip``.
 
 2. **Validate your current environment** by running ``pip check``. This
    will report if you have any inconsistencies in your set of installed
@@ -990,16 +990,16 @@ How to upgrade and migrate
    not be able to cover all of those without your help.
 
    -  If you use pip to install your software, try out the new resolver
-      and let us know if it works for you with ``pip install``. Try:
+      and let us know if it works for you with ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. Try:
 
       - installing several packages simultaneously
       - re-creating an environment using a ``requirements.txt`` file
-      - using ``pip install --force-reinstall`` to check whether
+      - using ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --force-reinstall`` to check whether
         it does what you think it should
       - using constraints files
       - the "Setups to test with special attention" and "Examples to try" below
 
-   -  If you have a build pipeline that depends on pip installing your
+   -  If you have a build pipeline that depends on pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'ing your
       dependencies for you, check that the new resolver does what you
       need.
 
@@ -1065,12 +1065,12 @@ Install:
 * ``tablib``
 * ``elasticsearch`` and ``requests`` together
 * ``six`` and ``cherrypy`` together
-* ``pip install flake8-import-order==0.17.1 flake8==3.5.0 --use-feature=2020-resolver``
-* ``pip install tornado==5.0 sprockets.http==1.5.0 --use-feature=2020-resolver``
+* ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' flake8-import-order==0.17.1 flake8==3.5.0 --use-feature=2020-resolver``
+* ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' tornado==5.0 sprockets.http==1.5.0 --use-feature=2020-resolver``
 
 Try:
 
-* ``pip install``
+* ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``
 * ``pip uninstall``
 * ``pip check``
 * ``pip cache``

@@ -52,7 +52,7 @@ In sequence, what does pip do?:
 
 4. Install the actual items to be installed.
 
-Why? pip installs from places other than PyPI! But also, we’ve never had
+Why? pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'s from places other than PyPI! But also, we’ve never had
 guarantees of PyPI’s JSON API before now, so no one has been getting
 metadata from PyPI separate from downloading the package itself.
 
@@ -74,7 +74,7 @@ Download process
 ----------------
 
 What happens in an install? Well, a subset of ``install``, a process
-pip usually does during a ``pip install``, is ``download`` (also
+pip usually does during a ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``, is ``download`` (also
 available to the user as the :ref:`pip download` command). And we
 download and INSPECT packages to get manifests. For any given package
 name, we need to know what files are available and what their
@@ -130,7 +130,7 @@ Looks there for:
 
 Once it has those, it selects one file and downloads it.
 
-(Question: If I want to ``pip install flask``, I think the whole list of filenames
+(Question: If I want to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' flask``, I think the whole list of filenames
 cannot….should not be …. ? I want only the Flask …. Why am I getting the
 whole list?
 

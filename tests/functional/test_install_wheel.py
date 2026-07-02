@@ -199,7 +199,7 @@ def test_install_wheel_with_target(
     script: PipTestEnvironment, shared_data: TestData, tmpdir: Path
 ) -> None:
     """
-    Test installing a wheel using pip install --target
+    Test installing a wheel using pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --target
     """
     shutil.copy(shared_data.packages / "simple.dist-0.1-py2.py3-none-any.whl", tmpdir)
     target_dir = script.scratch_path / "target"
@@ -249,7 +249,7 @@ def test_install_wheel_with_root(
     script: PipTestEnvironment, shared_data: TestData, tmpdir: Path
 ) -> None:
     """
-    Test installing a wheel using pip install --root
+    Test installing a wheel using pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --root
     """
     root_dir = script.scratch_path / "root"
     shutil.copy(shared_data.packages / "simple.dist-0.1-py2.py3-none-any.whl", tmpdir)
@@ -269,7 +269,7 @@ def test_install_wheel_with_prefix(
     script: PipTestEnvironment, shared_data: TestData, tmpdir: Path
 ) -> None:
     """
-    Test installing a wheel using pip install --prefix
+    Test installing a wheel using pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --prefix
     """
     prefix_dir = script.scratch_path / "prefix"
     shutil.copy(shared_data.packages / "simple.dist-0.1-py2.py3-none-any.whl", tmpdir)

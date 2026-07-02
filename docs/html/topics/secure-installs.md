@@ -90,11 +90,11 @@ These will happily go out and download, unchecked, anything you missed in your r
 Instead of `python setup.py install`, use:
 
 ```{pip-cli}
-$ pip install --no-deps .
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-deps .
 ```
 
 Instead of `python setup.py develop`, use:
 
 ```{pip-cli}
-$ pip install --no-deps -e .
+$ pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-deps -e .
 ```

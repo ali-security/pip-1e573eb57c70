@@ -87,7 +87,7 @@ behaviour by deferring to pip for the installations.
 
 For the end users, the best solution for dealing with packages with
 `setup_requires` is to install the packages listed in `setup_requires`
-beforehand, using a prior `pip install` command. This is because there is no
+beforehand, using a prior `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` command. This is because there is no
 way to control how these dependencies are located by `easy_install`, or how
 setuptools will invoke `pip` using pip's command line options -- which makes it
 tricky to get things working appropriately.

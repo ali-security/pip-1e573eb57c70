@@ -9,7 +9,7 @@ if sys.path[0] in ("", os.getcwd()):
     sys.path.pop(0)
 
 # If we are running from a wheel, add the wheel to sys.path
-# This allows the usage python pip-*.whl/pip install pip-*.whl
+# This allows the usage python pip-*.whl/pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' pip-*.whl
 if __package__ == "":
     # __file__ is pip-*.whl/pip/__main__.py
     # first dirname call strips of '/__main__.py', second strips off '/pip'

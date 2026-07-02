@@ -39,7 +39,7 @@ def test_entrypoints_work(entrypoint: str, script: PipTestEnvironment) -> None:
         )
     )
 
-    # expect_temp because pip install will generate fake_pkg.egg-info
+    # expect_temp because pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' will generate fake_pkg.egg-info
     script.pip("install", "-vvv", str(fake_pkg), expect_temp=True)
     result = script.pip("-V")
     result2 = script.run("fake_pip", "-V", allow_stderr_warning=True)

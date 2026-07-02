@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install httpx pyyaml rich
+      - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' httpx pyyaml rich
       - run: python tools/update-rtd-redirects.py
         env:
           RTD_API_TOKEN: ${{ secrets.RTD_API_TOKEN }}

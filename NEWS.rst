@@ -38,7 +38,7 @@ Improved Documentation
 ----------------------
 
 - Fix explanation of how PIP_CONFIG_FILE works (`#11815 <https://github.com/pypa/pip/issues/11815>`_)
-- Fix outdated pip install argument description in documentation. (`#12417 <https://github.com/pypa/pip/issues/12417>`_)
+- Fix outdated pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' argument description in documentation. (`#12417 <https://github.com/pypa/pip/issues/12417>`_)
 - Replace some links to PEPs with links to the canonical specifications on the :doc:`pypug:index` (`#12434 <https://github.com/pypa/pip/issues/12434>`_)
 - Updated the ``pyproject.toml`` document to stop suggesting
   to depend on ``wheel`` as a build dependency directly. (`#12449 <https://github.com/pypa/pip/issues/12449>`_)
@@ -87,7 +87,7 @@ Features
 
 - Improve extras resolution for multiple constraints on same base package. (`#11924 <https://github.com/pypa/pip/issues/11924>`_)
 - Improve use of datastructures to make candidate selection 1.6x faster. (`#12204 <https://github.com/pypa/pip/issues/12204>`_)
-- Allow ``pip install --dry-run`` to use platform and ABI overriding options. (`#12215 <https://github.com/pypa/pip/issues/12215>`_)
+- Allow ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --dry-run`` to use platform and ABI overriding options. (`#12215 <https://github.com/pypa/pip/issues/12215>`_)
 - Add ``is_yanked`` boolean entry to the installation report (``--report``) to indicate whether the requirement was yanked from the index, but was still selected by pip conform to :pep:`592`. (`#12224 <https://github.com/pypa/pip/issues/12224>`_)
 
 Bug Fixes
@@ -245,7 +245,7 @@ Features
 --------
 
 - Specify egg-link location in assertion message when it does not match installed location to provide better error message for debugging. (`#10476 <https://github.com/pypa/pip/issues/10476>`_)
-- Present conflict information during installation after each choice that is rejected (pass ``-vv`` to ``pip install`` to show it) (`#10937 <https://github.com/pypa/pip/issues/10937>`_)
+- Present conflict information during installation after each choice that is rejected (pass ``-vv`` to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` to show it) (`#10937 <https://github.com/pypa/pip/issues/10937>`_)
 - Display dependency chain on each Collecting/Processing log line. (`#11169 <https://github.com/pypa/pip/issues/11169>`_)
 - Support a per-requirement ``--config-settings`` option in requirements files. (`#11325 <https://github.com/pypa/pip/issues/11325>`_)
 - The ``--config-settings``/``-C`` option now supports using the same key multiple
@@ -306,7 +306,7 @@ Improved Documentation
   and mention limitations of ``--prefix`` regarding script installation. (`#11775 <https://github.com/pypa/pip/issues/11775>`_)
 - Add SECURITY.md to make the policy offical. (`#11809 <https://github.com/pypa/pip/issues/11809>`_)
 - Add username to Git over SSH example. (`#11838 <https://github.com/pypa/pip/issues/11838>`_)
-- Quote extras in the pip install docs to guard shells with default glob
+- Quote extras in the pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' docs to guard shells with default glob
   qualifiers, like zsh. (`#11842 <https://github.com/pypa/pip/issues/11842>`_)
 - Make it clear that requirements/constraints file can be a URL (`#11954 <https://github.com/pypa/pip/issues/11954>`_)
 
@@ -361,7 +361,7 @@ Bug Fixes
   is provided without ``build-system.build-backend`` as ``setuptools``
   (which we still check for) will inject it anyway. (`#11673 <https://github.com/pypa/pip/issues/11673>`_)
 - Fix an issue when an already existing in-memory distribution would cause
-  exceptions in ``pip install`` (`#11704 <https://github.com/pypa/pip/issues/11704>`_)
+  exceptions in ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` (`#11704 <https://github.com/pypa/pip/issues/11704>`_)
 
 Vendored Libraries
 ------------------
@@ -501,7 +501,7 @@ Features
   controlled and augmented to better support non-standard certificates. Depending on
   feedback, pip may switch to this as the default certificate verification backend in
   the future. (`#11082 <https://github.com/pypa/pip/issues/11082>`_)
-- Add ``--dry-run`` option to ``pip install``, to let it print what it would install but
+- Add ``--dry-run`` option to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``, to let it print what it would install but
   not actually change anything in the target environment. (`#11096 <https://github.com/pypa/pip/issues/11096>`_)
 - Record in wheel cache entries the URL of the original artifact that was downloaded
   to build the cached wheels. The record is named ``origin.json`` and uses the PEP 610
@@ -522,7 +522,7 @@ Features
 Bug Fixes
 ---------
 
-- Fix ``pip install --pre`` for packages with pre-release build dependencies defined
+- Fix ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --pre`` for packages with pre-release build dependencies defined
   both in ``pyproject.toml``'s ``build-system.requires`` and ``setup.py``'s
   ``setup_requires``. (`#10222 <https://github.com/pypa/pip/issues/10222>`_)
 - When pip rewrites the shebang line in a script during wheel installation,
@@ -640,7 +640,7 @@ Bug Fixes
 - Prioritize URL credentials over netrc. (`#10979 <https://github.com/pypa/pip/issues/10979>`_)
 - Filter available distributions using hash declarations from constraints files. (`#9243 <https://github.com/pypa/pip/issues/9243>`_)
 - Fix an error when trying to uninstall packages installed as editable from a network drive. (`#9452 <https://github.com/pypa/pip/issues/9452>`_)
-- Fix pip install issues using a proxy due to an inconsistency in how Requests is currently handling variable precedence in session. (`#9691 <https://github.com/pypa/pip/issues/9691>`_)
+- Fix pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' issues using a proxy due to an inconsistency in how Requests is currently handling variable precedence in session. (`#9691 <https://github.com/pypa/pip/issues/9691>`_)
 
 Vendored Libraries
 ------------------
@@ -745,8 +745,8 @@ Features
   For now, the deprecated ``html5lib`` code remains and can be used with the ``--use-deprecated=html5lib`` command line option. However, it will be removed in a future pip release. (`#10291 <https://github.com/pypa/pip/issues/10291>`_)
 - Utilise ``rich`` for presenting pip's default download progress bar. (`#10462 <https://github.com/pypa/pip/issues/10462>`_)
 - Present a better error message when an invalid wheel file is encountered, providing more context where the invalid wheel file is. (`#10535 <https://github.com/pypa/pip/issues/10535>`_)
-- Documents the ``--require-virtualenv`` flag for ``pip install``. (`#10588 <https://github.com/pypa/pip/issues/10588>`_)
-- ``pip install <tab>`` autocompletes paths. (`#10646 <https://github.com/pypa/pip/issues/10646>`_)
+- Documents the ``--require-virtualenv`` flag for ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. (`#10588 <https://github.com/pypa/pip/issues/10588>`_)
+- ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' <tab>`` autocompletes paths. (`#10646 <https://github.com/pypa/pip/issues/10646>`_)
 - Allow Python distributors to opt-out from or opt-in to the ``sysconfig`` installation scheme backend by setting ``sysconfig._PIP_USE_SYSCONFIG`` to ``True`` or ``False``. (`#10647 <https://github.com/pypa/pip/issues/10647>`_)
 - Make it possible to deselect tests requiring cryptography package on systems where it cannot be installed. (`#10686 <https://github.com/pypa/pip/issues/10686>`_)
 - Start using Rich for presenting error messages in a consistent format. (`#10703 <https://github.com/pypa/pip/issues/10703>`_)
@@ -930,7 +930,7 @@ Process
   migration to ``importlib.metadata``, since the underscore-dash normalization
   behavior is non-standard and specific to setuptools. This should not affect
   other parts of pip (for example, when feeding the ``pip freeze`` result back
-  into ``pip install``) since pip internally performs standard PEP 503
+  into ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``) since pip internally performs standard PEP 503
   normalization independently to setuptools.
 
 Deprecations and Removals
@@ -963,7 +963,7 @@ Features
   it will no longer traceback with FileNotFoundError,
   but it will provide a better error message instead, such as::
 
-      ERROR: Cannot uninstall foobar 0.1, RECORD file not found. You might be able to recover from this via: 'pip install --force-reinstall --no-deps foobar==0.1'.
+      ERROR: Cannot uninstall foobar 0.1, RECORD file not found. You might be able to recover from this via: 'pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --force-reinstall --no-deps foobar==0.1'.
 
   When dist-info/INSTALLER is present and contains some useful information, the info is included in the error message instead::
 
@@ -1082,7 +1082,7 @@ Features
   for more information. (`#9091 <https://github.com/pypa/pip/issues/9091>`_)
 - Bring back the "(from versions: ...)" message, that was shown on resolution failures. (`#9139 <https://github.com/pypa/pip/issues/9139>`_)
 - Add support for editable installs for project with only setup.cfg files. (`#9547 <https://github.com/pypa/pip/issues/9547>`_)
-- Improve performance when picking the best file from indexes during ``pip install``. (`#9748 <https://github.com/pypa/pip/issues/9748>`_)
+- Improve performance when picking the best file from indexes during ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. (`#9748 <https://github.com/pypa/pip/issues/9748>`_)
 - Warn instead of erroring out when doing a PEP 517 build in presence of
   ``--build-option``. Warn when doing a PEP 517 build in presence of
   ``--global-option``. (`#9774 <https://github.com/pypa/pip/issues/9774>`_)
@@ -1095,7 +1095,7 @@ Bug Fixes
 - Ignore ``.dist-info`` directories if the stem is not a valid Python distribution
   name, so they don't show up in e.g. ``pip freeze``. (`#7269 <https://github.com/pypa/pip/issues/7269>`_)
 - Only query the keyring for URLs that actually trigger error 401.
-  This prevents an unnecessary keyring unlock prompt on every pip install
+  This prevents an unnecessary keyring unlock prompt on every pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'
   invocation (even with default index URL which is not password protected). (`#8090 <https://github.com/pypa/pip/issues/8090>`_)
 - Prevent packages already-installed alongside with pip to be injected into an
   isolated build environment during build-time dependency population. (`#8214 <https://github.com/pypa/pip/issues/8214>`_)
@@ -1209,7 +1209,7 @@ Features
 --------
 
 - ``pip wheel`` now verifies the built wheel contains valid metadata, and can be
-  installed by a subsequent ``pip install``. This can be disabled with
+  installed by a subsequent ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. This can be disabled with
   ``--no-verify``. (`#9206 <https://github.com/pypa/pip/issues/9206>`_)
 - Improve presentation of XMLRPC errors in pip search. (`#9315 <https://github.com/pypa/pip/issues/9315>`_)
 
@@ -1546,7 +1546,7 @@ Deprecations and Removals
 Features
 --------
 
-- Log debugging information about pip, in ``pip install --verbose``. (`#3166 <https://github.com/pypa/pip/issues/3166>`_)
+- Log debugging information about pip, in ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --verbose``. (`#3166 <https://github.com/pypa/pip/issues/3166>`_)
 - Refine error messages to avoid showing Python tracebacks when an HTTP error occurs. (`#5380 <https://github.com/pypa/pip/issues/5380>`_)
 - Install wheel files directly instead of extracting them to a temp directory. (`#6030 <https://github.com/pypa/pip/issues/6030>`_)
 - Add a beta version of pip's next-generation dependency resolver.
@@ -1687,7 +1687,7 @@ Features
 - pip now implements PEP 610, so ``pip freeze`` has better fidelity
   in presence of distributions installed from Direct URL requirements. (`#609 <https://github.com/pypa/pip/issues/609>`_)
 - Add ``pip cache`` command for inspecting/managing pip's wheel cache. (`#6391 <https://github.com/pypa/pip/issues/6391>`_)
-- Raise error if ``--user`` and ``--target`` are used together in ``pip install`` (`#7249 <https://github.com/pypa/pip/issues/7249>`_)
+- Raise error if ``--user`` and ``--target`` are used together in ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` (`#7249 <https://github.com/pypa/pip/issues/7249>`_)
 - Significantly improve performance when ``--find-links`` points to a very large HTML page. (`#7729 <https://github.com/pypa/pip/issues/7729>`_)
 - Indicate when wheel building is skipped, due to lack of the ``wheel`` package. (`#7768 <https://github.com/pypa/pip/issues/7768>`_)
 - Change default behaviour to always cache responses from trusted-host source. (`#7847 <https://github.com/pypa/pip/issues/7847>`_)
@@ -1800,13 +1800,13 @@ Features
 
 - Default to doing a user install (as if ``--user`` was passed) when the main
   site-packages directory is not writeable and user site-packages are enabled. (`#1668 <https://github.com/pypa/pip/issues/1668>`_)
-- Warn if a path in PATH starts with tilde during ``pip install``. (`#6414 <https://github.com/pypa/pip/issues/6414>`_)
+- Warn if a path in PATH starts with tilde during ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. (`#6414 <https://github.com/pypa/pip/issues/6414>`_)
 - Cache wheels built from Git requirements that are considered immutable,
   because they point to a commit hash. (`#6640 <https://github.com/pypa/pip/issues/6640>`_)
 - Add option ``--no-python-version-warning`` to silence warnings
   related to deprecation of Python versions. (`#6673 <https://github.com/pypa/pip/issues/6673>`_)
 - Cache wheels that ``pip wheel`` built locally, matching what
-  ``pip install`` does. This particularly helps performance in workflows where
+  ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` does. This particularly helps performance in workflows where
   ``pip wheel`` is used for `building before installing
   <https://pip.pypa.io/en/stable/user_guide/#installing-from-local-packages>`_.
   Users desiring the original behavior can use ``pip wheel --no-cache-dir``. (`#6852 <https://github.com/pypa/pip/issues/6852>`_)
@@ -2054,13 +2054,13 @@ Bug Fixes
 - Make the "ascii" progress bar really be "ascii" and not Unicode. (`#5671 <https://github.com/pypa/pip/issues/5671>`_)
 - Fail elegantly when trying to set an incorrectly formatted key in config. (`#5963 <https://github.com/pypa/pip/issues/5963>`_)
 - Prevent DistutilsOptionError when prefix is indicated in the global environment and `--target` is used. (`#6008 <https://github.com/pypa/pip/issues/6008>`_)
-- Fix ``pip install`` to respect ``--ignore-requires-python`` when evaluating
+- Fix ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` to respect ``--ignore-requires-python`` when evaluating
   links. (`#6371 <https://github.com/pypa/pip/issues/6371>`_)
 - Fix a debug log message when freezing an editable, non-version controlled
   requirement. (`#6383 <https://github.com/pypa/pip/issues/6383>`_)
 - Extend to Subversion 1.8+ the behavior of calling Subversion in
   interactive mode when pip is run interactively. (`#6386 <https://github.com/pypa/pip/issues/6386>`_)
-- Prevent ``pip install <url>`` from permitting directory traversal if e.g.
+- Prevent ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' <url>`` from permitting directory traversal if e.g.
   a malicious server sends a ``Content-Disposition`` header with a filename
   containing ``../`` or ``..\\``. (`#6413 <https://github.com/pypa/pip/issues/6413>`_)
 - Hide passwords in output when using ``--find-links``. (`#6489 <https://github.com/pypa/pip/issues/6489>`_)
@@ -2089,7 +2089,7 @@ Improved Documentation
 - Upgrade Sphinx version used to build documentation. (`#6471 <https://github.com/pypa/pip/issues/6471>`_)
 - Fix generation of subcommand manpages. (`#6724 <https://github.com/pypa/pip/issues/6724>`_)
 - Mention that pip can install from git refs. (`#6512 <https://github.com/pypa/pip/issues/6512>`_)
-- Replace a failing example of pip installs with extras with a working one. (`#4733 <https://github.com/pypa/pip/issues/4733>`_)
+- Replace a failing example of pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'s with extras with a working one. (`#4733 <https://github.com/pypa/pip/issues/4733>`_)
 
 19.1.1 (2019-05-06)
 ===================
@@ -2261,7 +2261,7 @@ Bug Fixes
 - Greatly reduce memory usage when installing wheels containing large files. (`#5848 <https://github.com/pypa/pip/issues/5848>`_)
 - Editable non-VCS installs now freeze as editable. (`#5031 <https://github.com/pypa/pip/issues/5031>`_)
 - Editable Git installs without a remote now freeze as editable. (`#4759 <https://github.com/pypa/pip/issues/4759>`_)
-- Canonicalize sdist file names so they can be matched to a canonicalized package name passed to ``pip install``. (`#5870 <https://github.com/pypa/pip/issues/5870>`_)
+- Canonicalize sdist file names so they can be matched to a canonicalized package name passed to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. (`#5870 <https://github.com/pypa/pip/issues/5870>`_)
 - Properly decode special characters in SVN URL credentials. (`#5968 <https://github.com/pypa/pip/issues/5968>`_)
 - Make ``PIP_NO_CACHE_DIR`` disable the cache also for truthy values like ``"true"``, ``"yes"``, ``"1"``, etc. (`#5735 <https://github.com/pypa/pip/issues/5735>`_)
 
@@ -2303,7 +2303,7 @@ Features
   PyPI if those packages depend on packages not also hosted on PyPI.
   In the future, PyPI will block uploading packages with such external URL dependencies directly. (`#4187 <https://github.com/pypa/pip/issues/4187>`_)
 - Allows dist options (--abi, --python-version, --platform, --implementation) when installing with --target (`#5355 <https://github.com/pypa/pip/issues/5355>`_)
-- Support passing ``svn+ssh`` URLs with a username to ``pip install -e``. (`#5375 <https://github.com/pypa/pip/issues/5375>`_)
+- Support passing ``svn+ssh`` URLs with a username to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -e``. (`#5375 <https://github.com/pypa/pip/issues/5375>`_)
 - pip now ensures that the RECORD file is sorted when installing from a wheel file. (`#5525 <https://github.com/pypa/pip/issues/5525>`_)
 - Add support for Python 3.7. (`#5561 <https://github.com/pypa/pip/issues/5561>`_)
 - Malformed configuration files now show helpful error messages, instead of tracebacks. (`#5798 <https://github.com/pypa/pip/issues/5798>`_)
@@ -2455,7 +2455,7 @@ Bug Fixes
   install. (#5141)
 - ``ioctl(fd, termios.TIOCGWINSZ, ...)`` needs 8 bytes of data (#5150)
 - Do not warn about script location when installing to the directory containing
-  sys.executable. This is the case when 'pip install'ing without activating a
+  sys.executable. This is the case when 'pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/''ing without activating a
   virtualenv. (#5157)
 - Fix PEP 518 support. (#5188)
 - Don't warn about script locations if ``--target`` is specified. (#5203)
@@ -2477,14 +2477,14 @@ Bug Fixes
 Deprecations and Removals
 -------------------------
 
-- Removed the deprecated ``--egg`` parameter to ``pip install``. (#1749)
+- Removed the deprecated ``--egg`` parameter to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. (#1749)
 - Removed support for uninstalling projects which have been installed using
   distutils. distutils installed projects do not include metadata indicating
   what files belong to that install and thus it is impossible to *actually*
   uninstall them rather than just remove the metadata saying they've been
   installed while leaving all of the actual files behind. (#2386)
-- Removed the deprecated ``--download`` option to ``pip install``. (#2643)
-- Removed the deprecated --(no-)use-wheel flags to ``pip install`` and ``pip
+- Removed the deprecated ``--download`` option to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``. (#2643)
+- Removed the deprecated --(no-)use-wheel flags to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` and ``pip
   wheel``. (#2699)
 - Removed the deprecated ``--allow-external``, ``--allow-all-external``, and
   ``--allow-unverified`` options. (#3070)
@@ -2504,7 +2504,7 @@ Deprecations and Removals
 Features
 --------
 
-- Add `--progress-bar <progress_bar>` to ``pip download``, ``pip install`` and
+- Add `--progress-bar <progress_bar>` to ``pip download``, ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` and
   ``pip wheel`` commands, to allow selecting a specific progress indicator or,
   to completely suppress, (for example in a CI environment) use
   ``--progress-bar off```. (#2369, #2756)
@@ -2523,7 +2523,7 @@ Features
   mentioned in the issue. (#4008)
 - Add `--exclude-editable` to ``pip freeze`` and ``pip list`` to exclude
   editable packages from installed package list. (#4015, #4016)
-- Improve the error message for the common ``pip install ./requirements.txt``
+- Improve the error message for the common ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' ./requirements.txt``
   case. (#4127)
 - Add support for the new ``@ url`` syntax from PEP 508. (#4175)
 - Add setuptools version to the statistics sent to BigQuery. (#4209)
@@ -2565,9 +2565,9 @@ Features
 - Change documentation theme to be in line with Python Documentation (#4758)
 - Add auto completion of short options. (#4954)
 - Run 'setup.py develop' inside pep518 build environment. (#4999)
-- pip install now prints an error message when it installs an incompatible
+- pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' now prints an error message when it installs an incompatible
   version of a dependency. (#5000)
-- Added a way to distinguish between pip installed packages and those from the
+- Added a way to distinguish between pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'ed packages and those from the
   system package manager in 'pip list'. Specifically, 'pip list -v' also shows
   the installer of package if it has that meta data. (#949)
 - Show install locations when list command ran with "-v" option. (#979)
@@ -2577,9 +2577,9 @@ Bug Fixes
 
 - Allow pip to work if the ``GIT_DIR`` and ``GIT_WORK_TREE`` environment
   variables are set. (#1130)
-- Make ``pip install --force-reinstall`` not require passing ``--upgrade``.
+- Make ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --force-reinstall`` not require passing ``--upgrade``.
   (#1139)
-- Return a failing exit status when `pip install`, `pip download`, or `pip
+- Return a failing exit status when `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`, `pip download`, or `pip
   wheel` is called with no requirements. (#2720)
 - Interactive setup.py files will no longer hang indefinitely. (#2732, #4982)
 - Correctly reset the terminal if an exception occurs while a progress bar is
@@ -2599,7 +2599,7 @@ Bug Fixes
 - Shell completion scripts now use correct executable names (e.g., ``pip3``
   instead of ``pip``) (#3997)
 - Changed vendored encodings from ``utf8`` to ``utf-8``. (#4076)
-- Fixes destination directory of data_files when ``pip install --target`` is
+- Fixes destination directory of data_files when ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --target`` is
   used. (#4092)
 - Limit the disabling of requests' pyopenssl to Windows only. Fixes
   "SNIMissingWarning / InsecurePlatformWarning not fixable with pip 9.0 /
@@ -2641,7 +2641,7 @@ Bug Fixes
 - Fix warning message on mismatched versions during installation. (#4655)
 - pip now records installed files in a deterministic manner improving
   reproducibility. (#4667)
-- Fix an issue where ``pip install -e`` on a Git url would fail to update if a
+- Fix an issue where ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -e`` on a Git url would fail to update if a
   branch or tag name is specified that happens to match the prefix of the
   current ``HEAD`` commit hash. (#4675)
 - Fix an issue where a variable assigned in a try clause was accessed in the
@@ -2721,14 +2721,14 @@ Improved Documentation
 
 - **BACKWARD INCOMPATIBLE** Remove the attempted autodetection of requirement
   names from URLs, URLs must include a name via ``#egg=``.
-- **DEPRECATION** ``pip install --egg`` have been deprecated and will be
+- **DEPRECATION** ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --egg`` have been deprecated and will be
   removed in the future. This "feature" has a long list of drawbacks which
   break nearly all of pip's other features in subtle and hard-to-diagnose
   ways.
 - **DEPRECATION** ``--default-vcs`` option. (#4052)
 - **WARNING** pip 9 cache can break forward compatibility with previous pip
   versions if your package repository allows chunked responses. (#4078)
-- Add an ``--upgrade-strategy`` option to ``pip install``, to control how
+- Add an ``--upgrade-strategy`` option to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'``, to control how
   dependency upgrades are managed. (#3972)
 - Add a ``pip check`` command to check installed packages dependencies. (#3750)
 - Add option allowing user to abort pip operation if file/directory exists
@@ -2897,7 +2897,7 @@ Improved Documentation
 - Allow repository URLs with secure transports to count as trusted. (E.g.,
   "git+ssh" is okay.) (#2811)
 - Implement a top-level ``pip download`` command and deprecate
-  ``pip install --download``.
+  ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --download``.
 - When uninstalling, look for the case of paths containing symlinked
   directories (#3141, #3154)
 - When installing, if building a wheel fails, clear up the build directory
@@ -2917,7 +2917,7 @@ Improved Documentation
 - Fix a bug causing pip to not select a wheel compiled against an OSX SDK later
   than what Python itself was compiled against when running on a newer version
   of OSX.
-- Add a new ``--prefix`` option for ``pip install`` that supports wheels and
+- Add a new ``--prefix`` option for ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` that supports wheels and
   sdists. (#3252)
 - Fixed issue regarding wheel building with setup.py using a different encoding
   than the system. (#2042)
@@ -2933,7 +2933,7 @@ Improved Documentation
   option (#3258)
 - The detection of editable packages now relies on the presence of ``.egg-link``
   instead of looking for a VCS, so ``pip list -e`` is more reliable. (#3258)
-- Add the ``--prefix`` flag to ``pip install`` which allows specifying a root
+- Add the ``--prefix`` flag to ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'`` which allows specifying a root
   prefix to use instead of ``sys.prefix``. (#3252)
 - Allow duplicate specifications in the case that only the extras differ, and
   union all specified extras together. (#3198)
@@ -3064,8 +3064,8 @@ Improved Documentation
   (#2735)
 - Removed the temporary modifications (that began in pip v1.4 when distribute
   and setuptools merged) that allowed distribute to be considered a conflict to
-  setuptools. ``pip install -U setuptools`` will no longer upgrade "distribute"
-  to "setuptools".  Instead, use ``pip install -U distribute``. (#2767)
+  setuptools. ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -U setuptools`` will no longer upgrade "distribute"
+  to "setuptools".  Instead, use ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -U distribute``. (#2767)
 - Only display a warning to upgrade pip when the newest version is a final
   release and it is not a post release of the version we already have
   installed. (#2766)
@@ -3093,9 +3093,9 @@ Improved Documentation
   other than the current installation. (#2538, #2502)
 - Use a smoother progress bar when the terminal is capable of handling it,
   otherwise fallback to the original ASCII based progress bar.
-- Display much less output when `pip install` succeeds, because on success,
+- Display much less output when `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` succeeds, because on success,
   users probably don't care about all the nitty gritty details of compiling and
-  installing. When `pip install` fails, display the failed install output once
+  installing. When `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'` fails, display the failed install output once
   instead of twice, because once is enough. (#2487)
 - Upgrade the bundled copy of requests to 2.6.0, fixing CVE-2015-2296.
 - Display format of latest package when using ``pip list --outdated``. (#2475)
@@ -3239,19 +3239,19 @@ Improved Documentation
   in some cases versions will sort differently or version specifiers will be
   interpreted differently than previously. The common cases should all function
   similarly to before.
-- **DEPRECATION** ``pip install --download-cache`` and
+- **DEPRECATION** ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --download-cache`` and
   ``pip wheel --download-cache`` command line flags have been deprecated and
   the functionality removed. Since pip now automatically configures and uses
   it's internal HTTP cache which supplants the ``--download-cache`` the
   existing options have been made non functional but will still be accepted
   until their removal in pip v8.0. For more information please see
   https://pip.pypa.io/en/stable/reference/pip_install.html#caching
-- **DEPRECATION** ``pip install --build`` and ``pip install --no-clean`` are now
+- **DEPRECATION** ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --build`` and ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-clean`` are now
   *NOT* deprecated.  This reverses the deprecation that occurred in v1.5.3.
   (#906)
 - **DEPRECATION** Implicitly accessing URLs which point to an origin which is
   not a secure origin, instead requiring an opt-in for each host using the new
-  ``--trusted-host`` flag (``pip install --trusted-host example.com foo``).
+  ``--trusted-host`` flag (``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --trusted-host example.com foo``).
 - Allow the new ``--trusted-host`` flag to also disable TLS verification for
   a particular hostname.
 - Added a ``--user`` flag to ``pip freeze`` and ``pip list`` to check the
@@ -3285,7 +3285,7 @@ Improved Documentation
 - Properly handle extras when a project is installed via Wheel. (#1885, #1896)
 - Added support to respect proxies in ``pip search``.
   (#1180, #932, #1104, #1902)
-- `pip install --download` works with vcs links. (#798, #1060, #1926)
+- `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --download` works with vcs links. (#798, #1060, #1926)
 - Disabled warning about insecure index host when using localhost. Based off of
   Guy Rozendorn's work in #1718. (#1456, #1967)
 - Allow the use of OS standard user configuration files instead of ones simply
@@ -3331,20 +3331,20 @@ Improved Documentation
 1.5.4 (2014-02-21)
 ==================
 
-- Correct deprecation warning for ``pip install --build`` to only notify when
+- Correct deprecation warning for ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --build`` to only notify when
   the `--build` value is different than the default.
 
 
 1.5.3 (2014-02-20)
 ==================
 
-- **DEPRECATION** ``pip install --build`` and ``pip install --no-clean`` are now
+- **DEPRECATION** ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --build`` and ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-clean`` are now
   deprecated. (#906)
 - Fixed being unable to download directly from wheel paths/urls, and when wheel
   downloads did occur using requirement specifiers, dependencies weren't
   downloaded. (#1112, #1527)
 - ``pip wheel`` was not downloading wheels that already existed. (#1320, #1524)
-- ``pip install --download`` was failing using local ``--find-links``.
+- ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --download`` was failing using local ``--find-links``.
   (#1111, #1524)
 - Workaround for Python bug https://bugs.python.org/issue20053. (#1544)
 - Don't pass a unicode __file__ to setup.py on Python 2.x. (#1583)
@@ -3387,7 +3387,7 @@ Improved Documentation
   ``--allow-external PROJECT`` and ``--allow-unverified PROJECT``. (#1055)
 - **BACKWARD INCOMPATIBLE** pip no longer respects dependency links by default.
   Users may opt into respecting them again using ``--process-dependency-links``.
-- **DEPRECATION** ``pip install --no-install`` and ``pip install
+- **DEPRECATION** ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --no-install`` and ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'
   --no-download`` are now formally deprecated.  See #906 for discussion on
   possible alternatives, or lack thereof, in future releases.
 - **DEPRECATION** ``pip zip`` and ``pip unzip`` are now formally deprecated.
@@ -3503,7 +3503,7 @@ Improved Documentation
   project names. (#724)
 - Fixed problem where re-installs always occurred when using file:// find-links.
   (#683, #702)
-- "pip install -v" now shows the full download url, not just the archive name.
+- "pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -v" now shows the full download url, not just the archive name.
   Thanks Marc Abramowitz (#687)
 - Fix to prevent unnecessary PyPI redirects. Thanks Alex Gronholm (#695)
 - Fixed an install failure under Python 3 when the same version of a package is
@@ -3520,7 +3520,7 @@ Improved Documentation
 - Added support for --no-index in requirements files.
 - Added "pip show" command to get information about an installed package.
   Thanks Kelsey Hightower and Rafael Caricio. (#131)
-- Added `--root` option for "pip install" to specify root directory. Behaves
+- Added `--root` option for "pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'" to specify root directory. Behaves
   like the same option in distutils but also plays nice with pip's egg-info.
   Thanks Przemek Wrzos. (#253, #693)
 
@@ -3555,7 +3555,7 @@ Improved Documentation
 - Added ``--egg`` flag to request egg-style rather than flat installation.
   Thanks Kamal Bin Mustafa. (#3)
 - Prevent e.g. ``gmpy2-2.0.tar.gz`` from matching a request to
-  ``pip install gmpy``; sdist filename must begin with full project name
+  ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' gmpy``; sdist filename must begin with full project name
   followed by a dash. Thanks casevh for the report. (#510)
 - Allow package URLS to have querystrings. Thanks W. Trevor King. (#504)
 - pip freeze now falls back to non-editable format rather than blowing up if it
@@ -3604,17 +3604,17 @@ Improved Documentation
 - Understand version tags without minor version ("py3") in sdist filenames.
   Thanks Stuart Andrews for report and Olivier Girardot for patch. (#310)
 - pip now supports optionally installing setuptools "extras" dependencies; e.g.
-  "pip install Paste[openid]". Thanks Matt Maker and Olivier Girardot. (#7)
+  "pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' Paste[openid]". Thanks Matt Maker and Olivier Girardot. (#7)
 - freeze no longer borks on requirements files with --index-url or --find-links.
   Thanks Herbert Pfennig. (#391)
 - Handle symlinks properly. Thanks lebedov for the patch. (#288)
-- pip install -U no longer reinstalls the same versions of packages. Thanks
+- pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -U no longer reinstalls the same versions of packages. Thanks
   iguananaut for the pull request. (#49)
 - Removed ``-E``/``--environment`` option and ``PIP_RESPECT_VIRTUALENV``;
   both use a restart-in-venv mechanism that's broken, and neither one is
   useful since every virtualenv now has pip inside it.  Replace ``pip -E
   path/to/venv install Foo`` with ``virtualenv path/to/venv &&
-  path/to/venv/pip install Foo``.
+  path/to/venv/pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' Foo``.
 - Fixed pip throwing an IndexError when it calls `scraped_rel_links`. (#366)
 - pip search should set and return a useful shell status code. (#22)
 - Added global ``--exists-action`` command line option to easier script file
@@ -3699,7 +3699,7 @@ Improved Documentation
 - Added ability to install version control requirements without making them
   editable, e.g.::
 
-    pip install git+https://github.com/pypa/pip/
+    pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' git+https://github.com/pypa/pip/
 
   (#49)
 - Correctly locate build and source directory on macOS. (#175)
@@ -3784,12 +3784,12 @@ Improved Documentation
 - Speed up installing from Mercurial repositories by cloning without
   updating the working copy multiple times.
 - Fixed installing directly from directories (e.g.
-  ``pip install path/to/dir/``).
+  ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' path/to/dir/``).
 - Fixed installing editable packages with ``svn+ssh`` URLs.
 - Don't print unwanted debug information when running the freeze command.
 - Create log file directory automatically. Thanks Alexandre Conrad.
 - Make test suite easier to run successfully. Thanks Dave Abrahams.
-- Fixed "pip install ." and "pip install .."; better error for directory
+- Fixed "pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' ." and "pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' .."; better error for directory
   without setup.py. Thanks Alexandre Conrad.
 - Support Debian/Ubuntu "dist-packages" in zip command. Thanks duckx.
 - Fix relative --src folder. Thanks Simon Cross.
@@ -3831,15 +3831,15 @@ Improved Documentation
 
 - Add ``pip uninstall`` and uninstall-before upgrade (from Carl Meyer).
 - Extended configurability with config files and environment variables.
-- Allow packages to be upgraded, e.g., ``pip install Package==0.1``
-  then ``pip install Package==0.2``.
+- Allow packages to be upgraded, e.g., ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' Package==0.1``
+  then ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' Package==0.2``.
 - Allow installing/upgrading to Package==dev (fix "Source version does not
   match target version" errors).
 - Added command and option completion for bash and zsh.
 - Extended integration with virtualenv by providing an option to
   automatically use an active virtualenv and an option to warn if no active
   virtualenv is found.
-- Fixed a bug with pip install --download and editable packages, where
+- Fixed a bug with pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' --download and editable packages, where
   directories were being set with 0000 permissions, now defaults to 755.
 - Fixed uninstallation of easy_installed console_scripts.
 - Fixed uninstallation on macOS Framework layout installs
@@ -3969,7 +3969,7 @@ Improved Documentation
 0.2
 ===
 
-- Renamed to ``pip``, and to install you now do ``pip install
+- Renamed to ``pip``, and to install you now do ``pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/'
   PACKAGE``
 - Added command ``pip zip PACKAGE`` and ``pip unzip PACKAGE``.  This
   is particularly intended for Google App Engine to manage libraries

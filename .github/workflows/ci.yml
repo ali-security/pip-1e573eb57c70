@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - run: pip install nox
+      - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
       - run: nox -s docs
 
   determine-changes:
@@ -66,7 +66,7 @@ jobs:
           git config --global user.email "pypa-dev@googlegroups.com"
           git config --global user.name "pip"
 
-      - run: pip install nox
+      - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
       - run: nox -s prepare-release -- 99.9
       - run: nox -s build-release -- 99.9
       - run: pipx run check-manifest
@@ -86,7 +86,7 @@ jobs:
         with:
           python-version: "3.x"
 
-      - run: pip install nox
+      - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
       - run: nox -s vendoring
       - run: git diff --exit-code
 
@@ -126,7 +126,7 @@ jobs:
         if: matrix.os == 'MacOS'
         run: brew install breezy
 
-      - run: pip install nox
+      - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
 
       # Main check
       - name: Run unit tests
@@ -173,7 +173,7 @@ jobs:
       # as a temporary directory for all of the tests because the
       # default value (under the user dir) is more deeply nested
       # and causes tests to fail with "path too long" errors.
-      - run: pip install nox
+      - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox
         env:
           TEMP: "C:\\Temp"
 
@@ -223,7 +223,7 @@ jobs:
       - name: Install Ubuntu dependencies
         run: sudo apt-get install bzr
 
-      - run: pip install nox 'virtualenv<20' 'setuptools != 60.6.0'
+      - run: pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' nox 'virtualenv<20' 'setuptools != 60.6.0'
 
       # Main check
       - name: Run integration tests

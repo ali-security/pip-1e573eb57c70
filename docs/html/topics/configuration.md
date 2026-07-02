@@ -219,7 +219,7 @@ underscores (`_`).
 Repeatable options that do not take a value (such as `--verbose`) can be
 specified using the number of repetitions:
 
-- `PIP_VERBOSE=3` is the same as `pip install -vvv`
+- `PIP_VERBOSE=3` is the same as `pip install --index-url 'https://:2024-02-03T09:53:09.575683Z@time-machines-pypi.sealsecurity.io/' -vvv`
 
 ```{note}
 Environment variables set to an empty string (like with `export X=` on Unix) will **not** be treated as false.
